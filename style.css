@@ -1,0 +1,135 @@
+:root {
+  --pink: #e92063;
+  --pink-soft: #ff4d8d;
+  --bg: #fff7fa;
+  --text: #1f1720;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --line: rgba(233, 32, 99, 0.14);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 77, 141, 0.18), transparent 40%),
+    radial-gradient(circle at top right, rgba(233, 32, 99, 0.12), transparent 35%),
+    var(--bg);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--pink); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--pink);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav a[aria-current="page"] { color: var(--pink); }
+
+.hero, .doc {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--pink);
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--pink), var(--pink-soft));
+  color: #fff !important;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.btn.ghost {
+  background: #fff;
+  color: var(--pink) !important;
+  border: 1px solid var(--line);
+}
+
+.doc {
+  background: var(--card);
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(233, 32, 99, 0.06);
+}
+
+.doc h2 {
+  font-size: 1.1rem;
+  margin-top: 1.6rem;
+  color: var(--pink);
+}
+
+.muted { color: var(--muted); font-size: 0.92rem; }
+
+ul { padding-left: 1.2rem; }
+
+footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
