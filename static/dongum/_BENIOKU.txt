@@ -1,0 +1,10 @@
+DÖNGÜM WEB SİTESİ DOSYALARI BU KLASÖRE
+
+Döngüm'ün mevcut web sitesi dosyalarını (index.html, css, js, resimler...) olduğu gibi bu klasöre kopyalayın.
+- Bu klasörün içeriği siteye aynen /dongum/ adresine kopyalanır.
+  Örnek: https://<kullaniciadi>.github.io/<repo>/dongum/
+- Bu klasörde index.html varsa, Döngüm uygulama sayfasında otomatik olarak "Döngüm web sitesi" düğmesi çıkar.
+- Adı alt çizgi (_) ile başlayan dosyalar (bu dosya gibi) siteye kopyalanmaz.
+- Dikkat: Sitenin yolu /<repo>/dongum/ olacağı için, dosyalarınızdaki bağlantılar "/" ile başlıyorsa (ör. /style.css)
+  çalışmayabilir. Göreli bağlantı kullanın (ör. style.css veya ./style.css).
+- Aynı yöntem diğer uygulamalar için de geçerlidir: static/<uygulama-kisa-adi>/index.html

@@ -1,0 +1,20 @@
+# Netlify bu depoyu yayınlıyorsa yeni siteyi derleyip yayınlar.
+[build]
+  command = "npm run build"
+  publish = "dist"
+  [build.environment]
+    BASE_PATH = "/"
+
+# Eski Döngüm adresleri yeni yerine yönlensin (Play Console'daki eski linkler bozulmasın)
+[[redirects]]
+  from = "/gizlilik.html"
+  to = "/dongum/gizlilik.html"
+  status = 301
+[[redirects]]
+  from = "/kosullar.html"
+  to = "/dongum/kosullar.html"
+  status = 301
+[[redirects]]
+  from = "/style.css"
+  to = "/dongum/style.css"
+  status = 301

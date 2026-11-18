@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KADO Yönetim Paneli</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <strong class="logo">KADO <span>Yönetim Paneli</span></strong>
+    <span id="mode" class="pill">…</span>
+    <span class="spacer"></span>
+    <a id="siteLink" class="ghost" href="../" target="_blank" rel="noopener">Siteyi aç ↗</a>
+  </div>
+  <nav class="tabs" id="tabs" hidden>
+    <button data-tab="apps" class="active">Uygulamalar</button>
+    <button data-tab="cats">Kategoriler</button>
+    <button data-tab="site">Site ayarları</button>
+    <button data-tab="links">Play Console bağlantıları</button>
+    <button data-tab="gh" id="ghTab" hidden>GitHub bağlantısı</button>
+  </nav>
+</header>
+<main id="view" class="container"><p class="muted">Yükleniyor…</p></main>
+<div id="toast" class="toast" hidden></div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Bu site herkese açık olmalı. Şifre / Basic-Auth / bot engeli ekleme.
+# Google Play tarayıcısı 401 alırsa Play Console URL'yi reddeder.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+    X-Robots-Tag = "index, follow"
+    Access-Control-Allow-Origin = "*"

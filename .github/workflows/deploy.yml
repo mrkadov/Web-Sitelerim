@@ -1,0 +1,51 @@
+# Her "main" dalına gönderimde (push) siteyi derler ve GitHub Pages'te yayınlar.
+# Çevrimiçi yönetim panelinden yapılan kayıtlar da bir gönderim sayıldığı için site otomatik güncellenir.
+# Gerekli ayar: GitHub deposu → Settings → Pages → Build and deployment → Source: "GitHub Actions"
+name: Siteyi yayınla
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - name: Pages ayarlarını al
+        id: pages
+        uses: actions/configure-pages@v5
+      - run: npm ci
+      - name: Siteyi derle
+        run: npm run build
+        env:
+          # Ör. kullaniciadi.github.io/kado-site için "/kado-site"; kendi alan adınızda veya kullaniciadi.github.io deposunda ""
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

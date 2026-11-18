@@ -1,0 +1,15 @@
+# Bağımlılıklar (npm install ile yeniden oluşur)
+node_modules/
+
+# Derleme çıktısı (npm run build ile yeniden oluşur)
+dist/
+
+# Yedekler / geçici dosyalar
+data/*.bak
+data/*.tmp
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+.env.*
